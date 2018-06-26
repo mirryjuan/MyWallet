@@ -115,13 +115,15 @@
             android:maxLength="15"
             android:maxLines="1"/>
 
-        <Button
+        <com.example.mirry.mywallet.views.IconFontTextView
             android:id="@+id/remark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/add"
+            android:text="@string/add"
+            android:textSize="26sp"
+            android:textColor="@color/blue"
             android:layout_alignParentRight="true"
-            android:layout_margin="8dp"/>
+            android:padding="8dp"/>
 
     </RelativeLayout>
 
@@ -143,13 +145,15 @@
             android:textColor="#A000"
             android:textSize="20sp" />
 
-        <Button
+        <com.example.mirry.mywallet.views.IconFontTextView
             android:id="@+id/accomplish_remark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/add"
+            android:text="@string/add"
+            android:textSize="26sp"
+            android:textColor="@color/blue"
             android:layout_alignParentRight="true"
-            android:layout_margin="8dp"/>
+            android:padding="8dp"/>
 
     </RelativeLayout>
 

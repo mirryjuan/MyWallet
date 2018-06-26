@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
+import android.graphics.drawable.Icon;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -41,7 +42,7 @@ public class AddAccountActivity extends Activity implements View.OnClickListener
     private Button date;              //日期
     private GridView gvDetail;        //消费类别列表
     private EditText money;           //消费金额
-    private Button remark;            //备注
+    private IconFontTextView remark;            //备注
 
     private String type = EXPENSE;
 
@@ -77,7 +78,7 @@ public class AddAccountActivity extends Activity implements View.OnClickListener
     private int categoryPic;
     private int mColor;
     private TextView remarkContent;
-    private Button remarkAccomplish;
+    private IconFontTextView remarkAccomplish;
     private RelativeLayout rlRemark;
     private String myRemark;
     private RelativeLayout rlMoney;
@@ -94,10 +95,10 @@ public class AddAccountActivity extends Activity implements View.OnClickListener
         gvDetail = (GridView) findViewById(R.id.gv_detail);
 
         money = (EditText) findViewById(R.id.money);
-        remark = (Button) findViewById(R.id.remark);
+        remark = (IconFontTextView) findViewById(R.id.remark);
 
         remarkContent = (TextView) findViewById(R.id.content_remark);
-        remarkAccomplish = (Button) findViewById(R.id.accomplish_remark);
+        remarkAccomplish = (IconFontTextView) findViewById(R.id.accomplish_remark);
 
         rlRemark = (RelativeLayout) findViewById(R.id.rl_remark);
         rlMoney = (RelativeLayout) findViewById(R.id.rl_money);

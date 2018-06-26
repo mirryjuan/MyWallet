@@ -2,9 +2,11 @@ package com.example.mirry.mywallet.activity;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.FrameLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.mirry.mywallet.R;
@@ -12,6 +14,7 @@ import com.example.mirry.mywallet.fragment.DetailFragment;
 import com.example.mirry.mywallet.fragment.MeFragment;
 import com.example.mirry.mywallet.fragment.StatementFragment;
 import com.example.mirry.mywallet.fragment.WishFragment;
+import com.example.mirry.mywallet.utils.DrawableUtil;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 
@@ -22,6 +25,14 @@ public class MainActivity extends SlidingFragmentActivity {
     private void assignViews() {
         flContent = (FrameLayout) findViewById(R.id.fl_content);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+
+        RadioButton detail = (RadioButton) findViewById(R.id.detail);
+        RadioButton wish = (RadioButton) findViewById(R.id.wish);
+        RadioButton statement = (RadioButton) findViewById(R.id.statement);
+
+        DrawableUtil.setDrawableSize(this,detail,R.drawable.detail,80);
+        DrawableUtil.setDrawableSize(this,wish,R.drawable.wish,80);
+        DrawableUtil.setDrawableSize(this,statement,R.drawable.chart,80);
     }
 
     @Override
