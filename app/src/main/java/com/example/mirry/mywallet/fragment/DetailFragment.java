@@ -1,7 +1,5 @@
 package com.example.mirry.mywallet.fragment;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
@@ -11,14 +9,12 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.renderscript.Sampler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,9 +25,9 @@ import com.example.mirry.mywallet.activity.AddAccountActivity;
 import com.example.mirry.mywallet.activity.BudgetActivity;
 import com.example.mirry.mywallet.activity.MainActivity;
 import com.example.mirry.mywallet.bean.AccountData;
-import com.example.mirry.mywallet.bean.WishData;
 import com.example.mirry.mywallet.database.MyOpenHelper;
 import com.example.mirry.mywallet.utils.SharedPreferencesUtils;
+import com.example.mirry.mywallet.views.IconFontTextView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -46,7 +42,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener {
 
     private Activity myActivity;
 
-    private ImageButton addAccounts;             //添加按钮
+    private IconFontTextView addAccounts;             //添加按钮
     private TextView incomeItem;        //收入项目名
     private TextView expenseItem;      //支出项目名
     private TextView income;           //收入金额
@@ -168,7 +164,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener {
     }
 
     private void findAllViews(View view) {
-        addAccounts = (ImageButton) view.findViewById(R.id.btn_add);
+        addAccounts = (IconFontTextView) view.findViewById(R.id.btn_add);
         incomeItem = (TextView) view.findViewById(R.id.income);
         expenseItem = (TextView) view.findViewById(R.id.expense);
         income = (TextView) view.findViewById(R.id.tv_income);
@@ -224,7 +220,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener {
                 holder.expenseDetail = (TextView) convertView.findViewById(R.id.detail_account_expense);
                 holder.incomeRemark = (TextView) convertView.findViewById(R.id.detail_remark_income);
                 holder.expenseRemark = (TextView) convertView.findViewById(R.id.detail_remark_expense);
-                holder.itemType = (ImageButton) convertView.findViewById(R.id.item);
+                holder.itemType = (IconFontTextView) convertView.findViewById(R.id.item);
 
                 convertView.setTag(holder);
             }else {
@@ -237,16 +233,26 @@ public class DetailFragment extends Fragment implements View.OnClickListener {
                     String type = data.getType();
                     if (type.equals(INCOME)) {
                         holder.incomeDetail.setText(data.getItemTypeName() + "  " +data.getMoney()+"元");
-                        holder.incomeRemark.setText(data.getRemark());
+                        if(data.getRemark() != null){
+                            holder.incomeRemark.setText(data.getRemark());
+                        }else{
+                            holder.incomeRemark.setVisibility(View.GONE);
+                        }
+
                         holder.expenseDetail.setText(null);
                         holder.expenseRemark.setText(null);
                     }else if (type.equals(EXPENSE)){
                         holder.expenseDetail.setText(data.getItemTypeName() + "  " +data.getMoney()+"元");
-                        holder.expenseRemark.setText(data.getRemark());
+                        if(data.getRemark() != null){
+                            holder.expenseRemark.setText(data.getRemark());
+                        }else{
+                            holder.expenseRemark.setVisibility(View.GONE);
+                        }
                         holder.incomeDetail.setText(null);
                         holder.incomeRemark.setText(null);
                     }
-                    holder.itemType.setImageResource(data.getItemTypePic());
+                    holder.itemType.setText(data.getItemTypePic());
+                    holder.itemType.setTextColor(getResources().getColor(data.getColor()));
                 }
             }
 
@@ -259,7 +265,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener {
             TextView expenseDetail;
             TextView incomeRemark;
             TextView expenseRemark;
-            ImageButton itemType;
+            IconFontTextView itemType;
         }
     }
 
@@ -281,6 +287,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener {
             String type = cursor.getString(cursor.getColumnIndex("type"));
             String categoryName = cursor.getString(cursor.getColumnIndex("categoryName"));
             int categoryPic = cursor.getInt(cursor.getColumnIndex("categoryPic"));
+            int color = cursor.getInt(cursor.getColumnIndex("color"));
             String remark = cursor.getString(cursor.getColumnIndex("remark"));
             int money = cursor.getInt(cursor.getColumnIndex("money"));
             AccountData data = new AccountData();
@@ -290,6 +297,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener {
             data.setItemTypePic(categoryPic);
             data.setMoney(money);
             data.setType(type);
+            data.setColor(color);
             accountLists.add(data);
             if (type.equals(INCOME)) {
                 totalIncome += money;

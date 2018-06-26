@@ -21,7 +21,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 "categoryName VARCHAR(50) NOT NULL," +
                 "categoryPic INTEGER NOT NULL," +
                 "remark VARCHAR(500)," +
-                "money INTEGER NOT NULL)");
+                "money INTEGER NOT NULL," +
+                "color INTEGER NOT NULL)");
 
         db.execSQL("CREATE TABLE wishes(" +
                 "_id INTEGER PRIMARY KEY AUTOINCREMENT," +

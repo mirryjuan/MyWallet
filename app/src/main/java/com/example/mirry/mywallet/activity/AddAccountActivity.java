@@ -60,8 +60,8 @@ public class AddAccountActivity extends Activity implements View.OnClickListener
     };
     private int[] expenseColors = new int[]{
             R.color.golden, R.color.green, R.color.blueGrey, R.color.lightGreen, R.color.magenta,
-            R.color.lightYellow, R.color.orange, R.color.mred, R.color.azure, R.color.purple,
-            R.color.orange, R.color.mred, R.color.blueGrey, R.color.lightGreen, R.color.magenta,
+            R.color.lightYellow, R.color.orange, R.color.red, R.color.azure, R.color.purple,
+            R.color.orange, R.color.red, R.color.blueGrey, R.color.lightGreen, R.color.magenta,
             R.color.green, R.color.purple
     };
     private String[] incomeName = new String[]{
@@ -71,10 +71,11 @@ public class AddAccountActivity extends Activity implements View.OnClickListener
             R.string.defpic,R.string.salary,R.string.pocket,R.string.redpacket,R.string.job
     };
     private int[] incomeColors = new int[]{
-            R.color.golden, R.color.blueGrey, R.color.magenta, R.color.mred, R.color.lightYellow
+            R.color.golden, R.color.blueGrey, R.color.magenta, R.color.red, R.color.lightYellow
     };
     private String categoryName;
     private int categoryPic;
+    private int mColor;
     private TextView remarkContent;
     private Button remarkAccomplish;
     private RelativeLayout rlRemark;
@@ -158,6 +159,7 @@ public class AddAccountActivity extends Activity implements View.OnClickListener
         CategoryData data = categoryLists.get(position);
         categoryName = data.getCategoryName();
         categoryPic = data.getCategoryPic();
+        mColor = data.getColor();
     }
 
     private void initData() {
@@ -223,6 +225,7 @@ public class AddAccountActivity extends Activity implements View.OnClickListener
                         accountsValues.put("categoryPic",categoryPic);
                         accountsValues.put("money", mMoney);
                         accountsValues.put("remark",myRemark);
+                        accountsValues.put("color",mColor);
                         db.insert("accounts",null,accountsValues);
 
                         //插入或更新图表数据库

@@ -13,6 +13,7 @@ public class AccountData {
     private int money;                 //账目金额
     private String remark;             //备注
     private String date;               //日期
+    private int color;               //颜色
 
     public int get_id() {
         return _id;
@@ -69,5 +70,13 @@ public class AccountData {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
     }
 }

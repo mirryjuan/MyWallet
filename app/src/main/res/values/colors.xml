@@ -6,7 +6,8 @@
     <!--  亮黄色   -->
     <color name="yellow">#ffff00</color>
     <color name="black">#A000</color>
-    <color name="blue">#322334</color>
+    <color name="blue">#39BAFD</color>
+    <color name="white">#FFFFFF</color>
 
     <color name="green">#45B78E</color>
     <color name="magenta">#FE3178</color>
@@ -15,7 +16,7 @@
     <color name="purple">#DDB2FB</color>
     <color name="lightYellow">#F4DB4F</color>
     <color name="golden">#FFCD00</color>
-    <color name="mred">#EB4A4A</color>
+    <color name="red">#EB4A4A</color>
     <color name="lightGreen">#C7F47E</color>
     <color name="orange">#EC622F</color>
 </resources>

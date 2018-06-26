@@ -12,15 +12,17 @@
         android:orientation="horizontal"
         android:background="#FFF">
 
-        <ImageButton
+        <com.example.mirry.mywallet.views.IconFontTextView
             android:id="@+id/btn_add"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:background="@drawable/add"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
-            android:layout_alignParentRight="true" />
+            android:layout_alignParentRight="true"
+            android:text="@string/add"
+            android:textSize="26sp"
+            android:textColor="@color/blue"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
