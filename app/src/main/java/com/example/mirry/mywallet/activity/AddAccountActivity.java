@@ -240,6 +240,7 @@ public class AddAccountActivity extends Activity implements View.OnClickListener
                             statementValues.put("categoryName",categoryName);
                             statementValues.put("categoryPic",categoryPic);
                             statementValues.put("categoryMoney",totalMoney);
+                            statementValues.put("color",mColor);
                             db.insert("statement",null,statementValues);
                         }else {
                             totalMoney = cursor.getInt(cursor.getColumnIndex("categoryMoney"));

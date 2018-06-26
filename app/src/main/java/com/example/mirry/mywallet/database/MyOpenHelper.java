@@ -37,7 +37,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 "type VARCHAR(50) NOT NULL," +
                 "categoryPic INTEGER NOT NULL," +
                 "categoryName VARCHAR(50) NOT NULL,"+
-                "categoryMoney INTEGER NOT NULL)");
+                "categoryMoney INTEGER NOT NULL," +
+                "color INTEGER NOT NULL)");
     }
 
     @Override

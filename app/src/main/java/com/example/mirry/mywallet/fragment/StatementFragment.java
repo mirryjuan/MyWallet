@@ -25,6 +25,7 @@ import android.widget.TextView;
 import com.example.mirry.mywallet.R;
 import com.example.mirry.mywallet.bean.StatementData;
 import com.example.mirry.mywallet.database.MyOpenHelper;
+import com.example.mirry.mywallet.views.IconFontTextView;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.PieData;
@@ -215,11 +216,13 @@ public class StatementFragment extends Fragment {
                 int categoryPic = cursor.getInt(cursor.getColumnIndex("categoryPic"));
                 String categoryName = cursor.getString(cursor.getColumnIndex("categoryName"));
                 int categoryMoney = cursor.getInt(cursor.getColumnIndex("categoryMoney"));
+                int color = cursor.getInt(cursor.getColumnIndex("color"));
 
                 StatementData statementData = new StatementData();
                 statementData.setCategoryPic(categoryPic);
                 statementData.setCategoryName(categoryName);
                 statementData.setCategoryMoney(categoryMoney);
+                statementData.setColor(color);
                 categoryLists.add(statementData);
             }
         }else {
@@ -229,11 +232,13 @@ public class StatementFragment extends Fragment {
                     int categoryPic = cursor.getInt(cursor.getColumnIndex("categoryPic"));
                     String categoryName = cursor.getString(cursor.getColumnIndex("categoryName"));
                     int categoryMoney = cursor.getInt(cursor.getColumnIndex("categoryMoney"));
+                    int color = cursor.getInt(cursor.getColumnIndex("color"));
 
                     StatementData statementData = new StatementData();
                     statementData.setCategoryPic(categoryPic);
                     statementData.setCategoryName(categoryName);
                     statementData.setCategoryMoney(categoryMoney);
+                    statementData.setColor(color);
                     categoryLists.add(statementData);
                 }
         }
@@ -270,7 +275,7 @@ public class StatementFragment extends Fragment {
                 holder = new ViewHolder();
                 convertView = View.inflate(myActivity,R.layout.item_list_category,null);
 
-                holder.categoryPic = (ImageView) convertView.findViewById(R.id.category_pic);
+                holder.categoryPic = (IconFontTextView) convertView.findViewById(R.id.category_pic);
                 holder.categoryName = (TextView) convertView.findViewById(R.id.category_name);
                 holder.categoryPercentage = (TextView) convertView.findViewById(R.id.category_percentage);
                 holder.categoryMoney = (TextView) convertView.findViewById(R.id.category_money);
@@ -283,7 +288,8 @@ public class StatementFragment extends Fragment {
             StatementData statementData = categoryLists.get(position);
 
             if (statementData != null) {
-                holder.categoryPic.setImageResource(statementData.getCategoryPic());
+                holder.categoryPic.setText(getString(statementData.getCategoryPic()));
+                holder.categoryPic.setTextColor(getResources().getColor(statementData.getColor()));
                 holder.categoryName.setText(statementData.getCategoryName());
                 holder.categoryPercentage.setText(statementData.getCategoryPercentage());
                 holder.categoryMoney.setText(statementData.getCategoryMoney()+"");
@@ -294,7 +300,7 @@ public class StatementFragment extends Fragment {
 
         private class ViewHolder
         {
-            ImageView categoryPic;
+            IconFontTextView categoryPic;
             TextView categoryName;
             TextView categoryPercentage;
             TextView categoryMoney;

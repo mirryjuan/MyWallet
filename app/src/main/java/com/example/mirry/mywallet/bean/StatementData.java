@@ -13,6 +13,7 @@ public class StatementData {
     private String categoryName;
     private String categoryPercentage;
     private int categoryMoney;
+    private int color;
 
     public int getCategoryColor() {
         return categoryColor;
@@ -62,5 +63,13 @@ public class StatementData {
 
     public void setCategoryMoney(int categoryMoney) {
         this.categoryMoney = categoryMoney;
+    }
+
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
     }
 }

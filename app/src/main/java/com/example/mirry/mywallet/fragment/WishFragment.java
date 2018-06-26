@@ -25,6 +25,7 @@ import com.example.mirry.mywallet.R;
 import com.example.mirry.mywallet.activity.AddWishActivity;
 import com.example.mirry.mywallet.bean.WishData;
 import com.example.mirry.mywallet.database.MyOpenHelper;
+import com.example.mirry.mywallet.views.IconFontTextView;
 
 import java.util.ArrayList;
 
@@ -36,7 +37,7 @@ public class WishFragment extends Fragment implements View.OnClickListener {
     private Activity myActivity;
 
     //愿望页的控件
-    private ImageButton addWishes;
+    private IconFontTextView addWishes;
     private TextView money;
     private ListView wishes;
 
@@ -109,7 +110,7 @@ public class WishFragment extends Fragment implements View.OnClickListener {
 
 
     private void findAllViews(View view) {
-        addWishes = (ImageButton) view.findViewById(R.id.btn_add);
+        addWishes = (IconFontTextView) view.findViewById(R.id.btn_add);
         money = (TextView) view.findViewById(R.id.money);
         wishes = (ListView) view.findViewById(R.id.lv_wish);
         hint = (TextView) view.findViewById(R.id.hint);

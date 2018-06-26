@@ -23,4 +23,13 @@
     <string name="job">&#xe60a;</string>
 
     <string name="add">&#xe6c0;</string>
+
+    <string name="wishIcon">&#xe613;</string>
+    <string name="wish">&#xe612;</string>
+    <string name="heart">&#xe602;</string>
+    <string name="detail">&#xe624;</string>
+    <string name="check">&#xe67f;</string>
+    <string name="chart">&#xe744;</string>
+
+
 </resources>

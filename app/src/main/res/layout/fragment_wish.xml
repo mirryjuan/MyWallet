@@ -12,17 +12,21 @@
             android:layout_height="wrap_content"
             android:text="愿望"
             android:gravity="center"
-            android:textColor="#000"
-            android:textSize="24sp"
-            android:padding="8dp"/>
-        <ImageButton
+            android:textColor="@color/blue"
+            android:textSize="20sp"
+            android:padding="12dp"/>
+
+        <com.example.mirry.mywallet.views.IconFontTextView
             android:id="@+id/btn_add"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:layout_alignParentRight="true"
-            android:background="@drawable/add"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"/>
+            android:text="@string/add"
+            android:textSize="26sp"
+            android:textColor="@color/blue"/>
     </RelativeLayout>
 
     <LinearLayout
@@ -31,11 +35,14 @@
         android:background="#39bafd"
         android:orientation="horizontal">
 
-        <ImageView
+        <com.example.mirry.mywallet.views.IconFontTextView
             android:id="@+id/iv_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"/>
+            android:text="@string/wishIcon"
+            android:textSize="40sp"
+            android:padding="8dp"
+            android:textColor="@color/purple"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
