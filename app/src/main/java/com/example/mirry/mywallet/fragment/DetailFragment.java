@@ -82,6 +82,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener {
         myActivity = getActivity();
         MyOpenHelper helper = new MyOpenHelper(myActivity);
         db = helper.getReadableDatabase();
+        writableDatabase = helper.getWritableDatabase();
     }
 
     @Override
@@ -127,13 +128,13 @@ public class DetailFragment extends Fragment implements View.OnClickListener {
                         int id = accountData.get_id();
                         String categoryName = accountData.getItemTypeName();
                         String type = accountData.getType();
+                        int cutMoney = accountData.getMoney();
                         db.delete("accounts","_id=?",new String[]{""+id});
-                        // TODO: 2016/10/14 删除图表数据库的内容
-                        System.out.println(type + ":" + categoryName + ":" + money);
+
                         Cursor cursor = db.query("statement", new String[]{"categoryMoney"},"categoryName = ? and type = ?",new String[]{categoryName,type}, null, null, null);
                         while (cursor.moveToNext()){
                             categoryMoney = cursor.getInt(cursor.getColumnIndex("categoryMoney"));
-                            categoryMoney = categoryMoney - money;
+                            categoryMoney = categoryMoney - cutMoney;
                         }
                         if (categoryMoney <= 0) {
                             db.delete("statement","categoryName = ? and type = ?",new String[]{categoryName,type});

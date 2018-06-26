@@ -23,9 +23,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="许下心愿"
+            android:text="许下愿望"
             android:textSize="20sp"
-            android:textColor="#A000"
+            android:textColor="@color/blue"
             android:layout_marginLeft="20dp"/>
 
     </LinearLayout>
