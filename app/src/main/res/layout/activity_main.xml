@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#3000"
+        android:layout_margin="1dp"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="3dp"
+        android:layout_gravity="bottom">
+        <RadioButton
+            style="@style/ButtonTheme"
+            android:id="@+id/detail"
+            android:text="明细"
+            android:drawableTop="@drawable/detail"/>
+
+        <RadioButton
+            style="@style/ButtonTheme"
+            android:id="@+id/wish"
+            android:text="愿望"
+            android:drawableTop="@drawable/wish"/>
+
+        <RadioButton
+            style="@style/ButtonTheme"
+            android:id="@+id/statement"
+            android:text="报表"
+            android:drawableTop="@drawable/chart"/>
+    </RadioGroup>
+</LinearLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_menu_left">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#222A3300">
+
+        <ImageButton
+            android:id="@+id/pic_head"
+            android:background="@null"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/icon_wallet" />
+
+        <TextView
+            android:id="@+id/name_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="迷失雨樱花"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:background="#2000">
+        <Button
+            style="@style/BtnMenuTheme"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:text="我的余额"/>
+        <TextView
+            android:id="@+id/money_rest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0元"
+            android:textSize="15sp"
+            android:textColor="#FFF"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="20dp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:background="#2000"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
+
+        <Button
+            style="@style/BtnMenuTheme"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:text="待开发" />
+
+        <Button
+            style="@style/BtnMenuTheme"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:text="待开发"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

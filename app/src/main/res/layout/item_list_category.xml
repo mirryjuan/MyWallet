@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <ImageView
+        android:id="@+id/category_pic"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/add"/>
+
+    <TextView
+        android:id="@+id/category_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="餐饮"
+        android:textSize="17sp"
+        android:textColor="#A000"
+        android:padding="12dp"/>
+
+    <TextView
+        android:id="@+id/category_percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20.3%"
+        android:textSize="17sp"
+        android:textColor="#A000"
+        android:padding="12dp"/>
+
+    <TextView
+        android:id="@+id/category_money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="55元"
+        android:textSize="17sp"
+        android:padding="12dp"
+        android:textColor="#A000"
+        android:gravity="right"/>
+
+
+</LinearLayout>

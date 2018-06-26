@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">小钱包</string>
+
+    <string name="defpic">&#xe603;</string>
+    <string name="repast">&#xe604;</string>
+    <string name="traffic">&#xe662;</string>
+    <string name="fruit">&#xe64b;</string>
+    <string name="snacks">&#xe611;</string>
+    <string name="drink">&#xe601;</string>
+    <string name="cosmetics">&#xe63c;</string>
+    <string name="phone">&#xe727;</string>
+    <string name="home">&#xe636;</string>
+    <string name="study">&#xe605;</string>
+    <string name="gift">&#xe616;</string>
+    <string name="redpacket">&#xe61b;</string>
+    <string name="medicine">&#xe606;</string>
+    <string name="travel">&#xe609;</string>
+    <string name="clothing">&#xe608;</string>
+    <string name="life">&#xec32;</string>
+    <string name="movie">&#xe688;</string>
+    <string name="salary">&#xe600;</string>
+    <string name="pocket">&#xe656;</string>
+    <string name="job">&#xe60a;</string>
+
+    <string name="add">&#xe6c0;</string>
+</resources>

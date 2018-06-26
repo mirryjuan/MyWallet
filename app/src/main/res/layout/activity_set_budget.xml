@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SetBudgetActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/back"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设置预算"
+            android:textSize="20sp"
+            android:textColor="#A000"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/back"
+            android:layout_centerVertical="true"/>
+
+        <Button
+            android:id="@+id/confirm"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/confirm"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="3dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_title"
+        android:layout_marginTop="20dp"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="月预算"
+            android:textSize="16sp"
+            android:textColor="#A000"/>
+
+        <EditText
+            android:id="@+id/budget_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:hint="0"
+            android:textColorHint="#39bafd"
+            android:textColor="#39bafd"
+            android:inputType="number"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_title"
+        android:layout_marginTop="20dp"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="结算日"
+            android:textSize="16sp"
+            android:textColor="#A000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/date_settle"
+            android:text="每月第"
+            android:textSize="15sp"
+            android:textColor="#A000"
+            android:paddingRight="2dp"/>
+
+        <EditText
+            android:id="@+id/date_settle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:text="1天"
+            android:textSize="15sp"
+            android:textColor="#39bafd"/>
+    </RelativeLayout>
+
+</LinearLayout>
