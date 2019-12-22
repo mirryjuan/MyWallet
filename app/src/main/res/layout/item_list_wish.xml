@@ -73,8 +73,9 @@
                 android:id="@+id/pic_wish"
                 android:layout_width="50dp"
                 android:layout_height="40dp"
+                android:padding="10dp"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/icon_wallet"
+                android:src="@mipmap/icon"
                 android:layout_margin="5dp"/>
 
             <LinearLayout
